@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="InAmigos Foundation is a Section 8 registered NGO (80G & 12A, CSR-1, NITI Aayog registered) working across India in education, hunger relief, animal welfare, women empowerment, and environmental sustainability." />
+  <title>InAmigos Foundation | Empowering Lives, Spreading Compassion</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/logo-cropped.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* CSS RESET & VARIABLES */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --color-primary-dark: #163628;
+      --color-primary: #245e43;
+      --color-primary-hover: #1b4733;
+      --color-primary-light: #3a8a64;
+      --color-accent: #d88a2e;
+      --color-accent-soft: #fef3e2;
+      --color-bg-light: #f6f8f6;
+      --color-bg-white: #ffffff;
+      --color-card-border: #e2e8e3;
+      --color-text-main: #1f2a24;
+      --color-text-muted: #53645a;
+      --color-tag-bg: #eaf4ee;
+      --color-tag-text: #1d543b;
+
+      --font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --container-max-width: 1200px;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --shadow-sm: 0 2px 6px rgba(22, 54, 40, 0.05);
+      --shadow-md: 0 8px 24px rgba(22, 54, 40, 0.08);
+      --shadow-lg: 0 16px 36px rgba(22, 54, 40, 0.12);
+      --transition: all 0.25s ease;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-family);
+      color: var(--color-text-main);
+      background-color: var(--color-bg-white);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--container-max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* SECTION HEADERS */
+    .section {
+      padding: 80px 0;
+    }
+
+    .section-title-wrap {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 50px;
+    }
+
+    .section-badge {
+      display: inline-block;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--color-primary);
+      background: var(--color-tag-bg);
+      padding: 6px 16px;
+      border-radius: 50px;
+      margin-bottom: 14px;
+      border: 1px solid rgba(36, 94, 67, 0.15);
+    }
+
+    .section-title {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--color-primary-dark);
+      letter-spacing: -0.5px;
+      line-height: 1.25;
+      margin-bottom: 14px;
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--color-text-muted);
+    }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-weight: 600;
+      font-size: 0.98rem;
+      padding: 13px 26px;
+      border-radius: var(--radius-sm);
+      transition: var(--transition);
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background-color: var(--color-primary);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(36, 94, 67, 0.28);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--color-primary-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background-color: #ffffff;
+      color: var(--color-primary-dark);
+      border: 1.5px solid var(--color-primary);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--color-tag-bg);
+      transform: translateY(-2px);
+    }
+
+    .btn-accent {
+      background-color: #ffffff;
+      color: var(--color-primary-dark);
+      font-weight: 700;
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-accent:hover {
+      background-color: var(--color-accent-soft);
+      color: #925400;
+      transform: translateY(-2px);
+    }
+
+    /* HEADER & NAVBAR */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--color-card-border);
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--color-primary-dark);
+      letter-spacing: -0.3px;
+    }
+
+    .logo-img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--color-text-main);
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      color: var(--color-primary);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: var(--color-primary);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      margin-left: 6px;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      color: var(--color-primary-dark);
+    }
+
+    .mobile-menu-btn svg {
+      width: 28px;
+      height: 28px;
+      stroke: currentColor;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, rgba(16, 46, 33, 0.92) 0%, rgba(26, 68, 49, 0.84) 100%),
+                  url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      color: #ffffff;
+      padding: 120px 0 110px;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(4px);
+      padding: 8px 18px;
+      border-radius: 50px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: 3.25rem;
+      font-weight: 800;
+      line-height: 1.18;
+      letter-spacing: -0.8px;
+      margin-bottom: 20px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.18);
+    }
+
+    .hero-intro {
+      font-size: 1.25rem;
+      line-height: 1.6;
+      color: #e2f0e7;
+      margin-bottom: 36px;
+      font-weight: 400;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ABOUT US SECTION */
+    .about {
+      background-color: var(--color-bg-white);
+    }
+
+    .about-box {
+      background: var(--color-bg-light);
+      border: 1px solid var(--color-card-border);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .about-content {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-text h3 {
+      font-size: 1.7rem;
+      color: var(--color-primary-dark);
+      font-weight: 700;
+      margin-bottom: 18px;
+      line-height: 1.3;
+    }
+
+    .about-text p {
+      font-size: 1.05rem;
+      color: var(--color-text-muted);
+      margin-bottom: 24px;
+    }
+
+    .about-meta {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      padding-top: 14px;
+      border-top: 1px dashed var(--color-card-border);
+    }
+
+    .about-credentials {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .cert-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: #ffffff;
+      padding: 14px 18px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--color-card-border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .cert-icon {
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
+      background: var(--color-tag-bg);
+      color: var(--color-primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cert-icon svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .cert-title {
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: var(--color-primary-dark);
+    }
+
+    .cert-desc {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+    }
+
+    /* OUR PROJECTS SECTION */
+    .projects {
+      background-color: var(--color-bg-light);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .project-card {
+      background: #ffffff;
+      border: 1px solid var(--color-card-border);
+      border-radius: var(--radius-md);
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(36, 94, 67, 0.4);
+    }
+
+    .project-icon-box {
+      width: 54px;
+      height: 54px;
+      border-radius: 12px;
+      background: var(--color-tag-bg);
+      color: var(--color-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 22px;
+    }
+
+    .project-icon-box svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .project-card h3 {
+      font-size: 1.35rem;
+      color: var(--color-primary-dark);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .project-card p {
+      font-size: 0.96rem;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+    }
+
+    /* IMPACT STATS SECTION */
+    .impact {
+      background-color: var(--color-primary-dark);
+      color: #ffffff;
+      padding: 70px 0;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      text-align: center;
+    }
+
+    .stat-card {
+      padding: 24px;
+      border-right: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .stat-card:last-child {
+      border-right: none;
+    }
+
+    .stat-number {
+      font-size: 2.85rem;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.1;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+    }
+
+    .stat-label {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #b7dbcb;
+      text-transform: capitalize;
+    }
+
+    /* GALLERY SECTION */
+    .gallery {
+      background-color: var(--color-bg-white);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--color-card-border);
+      background-color: #e5ece7;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.06);
+    }
+
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(16, 46, 33, 0.9) 0%, transparent 100%);
+      color: #ffffff;
+      padding: 24px 16px 14px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    /* CALL TO ACTION SECTION */
+    .cta {
+      background: linear-gradient(135deg, #1f4f39 0%, #2e7153 100%);
+      color: #ffffff;
+      text-align: center;
+      padding: 85px 0;
+    }
+
+    .cta-content {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .cta h2 {
+      font-size: 2.35rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      line-height: 1.25;
+      letter-spacing: -0.5px;
+    }
+
+    .cta p {
+      font-size: 1.1rem;
+      color: #dcefe5;
+      margin-bottom: 34px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 18px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-cta-light {
+      background-color: #ffffff;
+      color: var(--color-primary-dark);
+      font-weight: 700;
+      padding: 14px 30px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-cta-light:hover {
+      background-color: #f1f7f3;
+      transform: translateY(-2px);
+    }
+
+    .btn-cta-outline {
+      background-color: transparent;
+      color: #ffffff;
+      border: 2px solid #ffffff;
+      font-weight: 700;
+      padding: 13px 28px;
+    }
+
+    .btn-cta-outline:hover {
+      background-color: rgba(255, 255, 255, 0.12);
+      transform: translateY(-2px);
+    }
+
+    /* FOOTER */
+    .footer {
+      background-color: #0f241a;
+      color: #a7b8ae;
+      padding: 70px 0 30px;
+      font-size: 0.95rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 50px;
+    }
+
+    .footer-brand .footer-logo {
+      height: 40px;
+      width: auto;
+      object-fit: contain;
+      background: #ffffff;
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-bottom: 14px;
+      display: inline-block;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    }
+
+    .footer-brand h3 {
+      color: #ffffff;
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .footer-brand p {
+      line-height: 1.6;
+      margin-bottom: 16px;
+      font-size: 0.92rem;
+    }
+
+    .footer-title {
+      color: #ffffff;
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+      letter-spacing: 0.2px;
+    }
+
+    .footer-contact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .footer-contact-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      line-height: 1.5;
+    }
+
+    .footer-contact-icon {
+      color: #63b38c;
+      width: 18px;
+      height: 18px;
+      min-width: 18px;
+      margin-top: 3px;
+    }
+
+    .footer-contact-item a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    .social-btn {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .social-btn:hover {
+      background: var(--color-primary);
+      transform: translateY(-2px);
+    }
+
+    .social-btn svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 28px;
+      text-align: center;
+      font-size: 0.88rem;
+      color: #7b8e83;
+    }
+
+    /* MODAL POPUPS (FOR VOLUNTEER & DONATE CTAs) */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 36, 26, 0.7);
+      backdrop-filter: blur(4px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+      padding: 20px;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      max-width: 520px;
+      width: 100%;
+      padding: 36px;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #718096;
+      padding: 4px;
+    }
+
+    .modal-close:hover {
+      color: #1a202c;
+    }
+
+    .modal-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--color-primary-dark);
+      margin-bottom: 8px;
+    }
+
+    .modal-desc {
+      font-size: 0.92rem;
+      color: var(--color-text-muted);
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+      text-align: left;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--color-text-main);
+    }
+
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid var(--color-card-border);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: var(--transition);
+    }
+
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      outline: none;
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 3px rgba(36, 94, 67, 0.15);
+    }
+
+    /* RESPONSIVE MEDIA QUERIES */
+    @media (max-width: 1024px) {
+      .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .stat-card:nth-child(2) {
+        border-right: none;
+      }
+      .stat-card:nth-child(1), .stat-card:nth-child(2) {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        padding-bottom: 28px;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        height: 68px;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        background: #ffffff;
+        padding: 24px;
+        border-bottom: 1px solid var(--color-card-border);
+        box-shadow: var(--shadow-md);
+        gap: 18px;
+        text-align: left;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .hero {
+        padding: 85px 0 75px;
+      }
+
+      .hero h1 {
+        font-size: 2.25rem;
+      }
+
+      .hero-intro {
+        font-size: 1.05rem;
+      }
+
+      .about-box {
+        padding: 28px 20px;
+      }
+
+      .about-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stat-card {
+        border-right: none !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        padding: 18px 0;
+      }
+
+      .stat-card:last-child {
+        border-bottom: none;
+      }
+
+      .section {
+        padding: 60px 0;
+      }
+
+      .section-title {
+        font-size: 1.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER / NAVBAR -->
+  <header class="header" id="header">
+    <div class="container navbar">
+      <a href="#home" class="logo" id="logo-link">
+        <img src="assets/logo-cropped.png" alt="InAmigos Foundation Logo" class="logo-img" />
+        <span>InAmigos Foundation</span>
+      </a>
+
+      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <ul class="nav-links" id="nav-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <span class="hero-badge">Section 8 Registered Non-Profit NGO</span>
+          <h1>Empowering Lives, Spreading Compassion</h1>
+          <p class="hero-intro">
+            Working hand-in-hand with communities, passionate volunteers, and corporate partners to uplift underprivileged lives, protect animals, and conserve our environment across India.
+          </p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary" id="hero-explore-btn">Our Projects</a>
+            <button class="btn btn-accent" onclick="openModal('donateModal')" id="hero-donate-btn">Support Our Cause</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT US SECTION -->
+    <section class="section about" id="about">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-badge">Who We Are</span>
+          <h2 class="section-title">Committed to Transparent, Ground-Level Change</h2>
+          <p class="section-subtitle">Dedicated to nationwide social welfare, child development, and sustainable ecological living.</p>
+        </div>
+
+        <div class="about-box">
+          <div class="about-content">
+            <div class="about-text">
+              <h3>InAmigos Foundation</h3>
+              <p>
+                InAmigos Foundation is a Section 8 registered NGO, 80G &amp; 12A certified, CSR-1 registered, NITI Aayog registered, and IAF ISO 9001:2015 certified, working across India through volunteers and corporate partnerships.
+              </p>
+              <div class="about-meta">
+                Founded on 23 September 2020 by Mr. Govind Shukla &bull; Headquartered in Bilaspur, Chhattisgarh
+              </div>
+            </div>
+
+            <!-- Certified Badges -->
+            <div class="about-credentials">
+              <div class="cert-item">
+                <div class="cert-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                  </svg>
+                </div>
+                <div>
+                  <div class="cert-title">Section 8 Registered</div>
+                  <div class="cert-desc">Govt. of India Certified Non-Profit</div>
+                </div>
+              </div>
+
+              <div class="cert-item">
+                <div class="cert-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <div class="cert-title">80G &amp; 12A Certified</div>
+                  <div class="cert-desc">Tax exemption benefits for donors</div>
+                </div>
+              </div>
+
+              <div class="cert-item">
+                <div class="cert-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                </div>
+                <div>
+                  <div class="cert-title">CSR-1 &amp; NITI Aayog Registered</div>
+                  <div class="cert-desc">Eligible for Corporate CSR &amp; NGO Darpan</div>
+                </div>
+              </div>
+
+              <div class="cert-item">
+                <div class="cert-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                </div>
+                <div>
+                  <div class="cert-title">IAF ISO 9001:2015 Certified</div>
+                  <div class="cert-desc">International standard quality management</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUR PROJECTS SECTION -->
+    <section class="section projects" id="projects">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-badge">What We Do</span>
+          <h2 class="section-title">Our Ongoing Projects</h2>
+          <p class="section-subtitle">Targeted community initiatives driving grassroot empowerment, education, and ecological care.</p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: Seva -->
+          <div class="project-card">
+            <div class="project-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <!-- Food / Care Icon -->
+                <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                <line x1="6" y1="1" x2="6" y2="4"></line>
+                <line x1="10" y1="1" x2="10" y2="4"></line>
+                <line x1="14" y1="1" x2="14" y2="4"></line>
+              </svg>
+            </div>
+            <h3>Project Seva</h3>
+            <p>Providing essential nutritious food, clean drinking water, and warm clothing to the underprivileged and vulnerable families living on the margins.</p>
+          </div>
+
+          <!-- Project 2: Bachpanshala -->
+          <div class="project-card">
+            <div class="project-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <!-- Book / Education Icon -->
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+              </svg>
+            </div>
+            <h3>Project Bachpanshala</h3>
+            <p>Imparting quality primary education, learning materials, and mentoring for underprivileged children to build a foundation for a brighter future.</p>
+          </div>
+
+          <!-- Project 3: Jeev -->
+          <div class="project-card">
+            <div class="project-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <!-- Animal Welfare Paw Icon -->
+                <circle cx="11" cy="4" r="2"></circle>
+                <circle cx="18" cy="8" r="2"></circle>
+                <circle cx="20" cy="16" r="2"></circle>
+                <path d="M9 10a5 5 0 0 1 5 5v3a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-3a5 5 0 0 1 5-5z"></path>
+              </svg>
+            </div>
+            <h3>Project Jeev</h3>
+            <p>Promoting animal welfare through regular rescue missions, emergency medical care, rehabilitation, and compassionate feeding drives for stray animals.</p>
+          </div>
+
+          <!-- Project 4: Udaan -->
+          <div class="project-card">
+            <div class="project-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <!-- Wings / Empowerment Icon -->
+                <path d="M12 2v20"></path>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </div>
+            <h3>Project Udaan</h3>
+            <p>Dedicated to women empowerment through hands-on vocational training, self-help workshops, and pathways to sustainable financial independence.</p>
+          </div>
+
+          <!-- Project 5: Prakriti -->
+          <div class="project-card">
+            <div class="project-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <!-- Leaf / Nature Icon -->
+                <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path>
+                <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+              </svg>
+            </div>
+            <h3>Project Prakriti</h3>
+            <p>Fostering environmental conservation, native tree plantation drives, clean-up operations, and community workshops on ecological sustainability.</p>
+          </div>
+
+          <!-- Project 6: Vikas -->
+          <div class="project-card">
+            <div class="project-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <!-- Skill / Growth Icon -->
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                <polyline points="17 6 23 6 23 12"></polyline>
+              </svg>
+            </div>
+            <h3>Project Vikas</h3>
+            <p>Skill development and career orientation programs crafted to enhance youth employability, technical competency, and professional confidence.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMPACT STATS SECTION -->
+    <section class="impact" id="impact">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number">200+</div>
+            <div class="stat-label">Active Volunteers</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">28</div>
+            <div class="stat-label">States Reached</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">6</div>
+            <div class="stat-label">Ongoing Causes</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">50,000+</div>
+            <div class="stat-label">Beneficiaries</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section class="section gallery" id="gallery">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-badge">Moments of Hope</span>
+          <h2 class="section-title">Our Work in Action</h2>
+          <p class="section-subtitle">A glimpse into our ground activities, youth education, food relief, and environmental efforts.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <!-- Image 1 -->
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=700&q=80" alt="Children receiving education at Project Bachpanshala" loading="lazy" />
+            <div class="gallery-caption">Project Bachpanshala &bull; Education Drive</div>
+          </div>
+
+          <!-- Image 2 -->
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=700&q=80" alt="Volunteer distributing meals during Project Seva" loading="lazy" />
+            <div class="gallery-caption">Project Seva &bull; Food &amp; Relief Support</div>
+          </div>
+
+          <!-- Image 3 -->
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=700&q=80" alt="Caring for animals under Project Jeev" loading="lazy" />
+            <div class="gallery-caption">Project Jeev &bull; Animal Care &amp; Rescue</div>
+          </div>
+
+          <!-- Image 4 -->
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=700&q=80" alt="Volunteers planting trees for Project Prakriti" loading="lazy" />
+            <div class="gallery-caption">Project Prakriti &bull; Tree Plantation Drive</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALL-TO-ACTION SECTION -->
+    <section class="cta" id="cta">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Be the Reason Someone Smiles Today</h2>
+          <p>
+            Whether you dedicate your time as an active volunteer or contribute through donations, your support brings real, lasting change to those who need it most.
+          </p>
+          <div class="cta-buttons">
+            <a href="#volunteerModal" class="btn btn-cta-light" onclick="openModal('volunteerModal'); return false;" id="cta-volunteer-btn">Join Us as a Volunteer</a>
+            <a href="#donateModal" class="btn btn-cta-outline" onclick="openModal('donateModal'); return false;" id="cta-donate-btn">Support Our Cause</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand Info -->
+        <div class="footer-brand">
+          <a href="#home" title="InAmigos Foundation Homepage">
+            <img src="assets/logo-cropped.png" alt="InAmigos Foundation Logo" class="footer-logo" />
+          </a>
+          <h3>InAmigos Foundation</h3>
+          <p>
+            InAmigos Foundation is a Section 8 registered NGO, 80G &amp; 12A certified, CSR-1 registered, NITI Aayog registered, and IAF ISO 9001:2015 certified, working across India through volunteers and corporate partnerships.
+          </p>
+          <p style="font-size: 0.85rem; color: #879b90; margin-top: 8px;">
+            Founded on 23 September 2020 by Mr. Govind Shukla &bull; Bilaspur, Chhattisgarh
+          </p>
+        </div>
+
+        <!-- Contact Details -->
+        <div>
+          <h4 class="footer-title">Contact Us</h4>
+          <ul class="footer-contact-list">
+            <li class="footer-contact-item">
+              <span class="footer-contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </span>
+              <span>Ward No. 5, Gram Post, Sipat Ujwal Nagar, Bilaspur, Chhattisgarh &ndash; 495555</span>
+            </li>
+            <li class="footer-contact-item">
+              <span class="footer-contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </span>
+              <a href="mailto:inamigosfoundation@gmail.com">inamigosfoundation@gmail.com</a>
+            </li>
+            <li class="footer-contact-item">
+              <span class="footer-contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </span>
+              <a href="tel:+916267309902">+91 626 730 9902</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Social & Quick Links -->
+        <div>
+          <h4 class="footer-title">Connect With Us</h4>
+          <p style="margin-bottom: 12px; font-size: 0.92rem;">Follow our active field campaigns and volunteer updates:</p>
+          <div class="social-links">
+            <!-- Facebook -->
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Visit InAmigos Foundation on Facebook">
+              <svg viewBox="0 0 24 24">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+
+            <!-- Instagram -->
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Visit InAmigos Foundation on Instagram">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        &copy; <span id="current-year">2026</span> InAmigos Foundation. All Rights Reserved. &bull; Section 8 Non-Profit Registered Entity.
+      </div>
+    </div>
+  </footer>
+
+  <!-- VOLUNTEER FORM MODAL -->
+  <div class="modal-overlay" id="volunteerModal" role="dialog" aria-modal="true" aria-labelledby="volunteerTitle">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeModal('volunteerModal')" aria-label="Close volunteer form">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <h3 class="modal-title" id="volunteerTitle">Join as a Volunteer</h3>
+      <p class="modal-desc">Become part of our 200+ volunteers across India driving grassroot transformation.</p>
+
+      <form onsubmit="handleFormSubmit(event, 'Thank you for registering as a volunteer! Our team will contact you shortly.')">
+        <div class="form-group">
+          <label class="form-label" for="vol-name">Full Name</label>
+          <input type="text" id="vol-name" class="form-input" placeholder="Your name" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="vol-email">Email Address</label>
+          <input type="email" id="vol-email" class="form-input" placeholder="you@example.com" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="vol-phone">Phone Number</label>
+          <input type="tel" id="vol-phone" class="form-input" placeholder="+91 XXXXX XXXXX" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="vol-cause">Preferred Cause</label>
+          <select id="vol-cause" class="form-select">
+            <option>Project Seva (Food &amp; Clothing)</option>
+            <option>Project Bachpanshala (Child Education)</option>
+            <option>Project Jeev (Animal Welfare)</option>
+            <option>Project Udaan (Women Empowerment)</option>
+            <option>Project Prakriti (Environment)</option>
+            <option>Project Vikas (Skill Development)</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Application</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- DONATE FORM MODAL -->
+  <div class="modal-overlay" id="donateModal" role="dialog" aria-modal="true" aria-labelledby="donateTitle">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeModal('donateModal')" aria-label="Close donation form">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <h3 class="modal-title" id="donateTitle">Support Our Cause</h3>
+      <p class="modal-desc">All donations are 80G tax-exempted under the Indian Income Tax Act.</p>
+
+      <form onsubmit="handleFormSubmit(event, 'Thank you for your generosity! You will be redirected to the secure payment portal.')">
+        <div class="form-group">
+          <label class="form-label" for="don-name">Full Name / Organization</label>
+          <input type="text" id="don-name" class="form-input" placeholder="Donor name" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="don-email">Email (for 80G receipt)</label>
+          <input type="email" id="don-email" class="form-input" placeholder="you@example.com" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="don-amount">Contribution Amount (INR)</label>
+          <input type="number" id="don-amount" class="form-input" placeholder="₹ 1,000" min="100" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="don-pan">PAN Number (Optional, for 80G Certificate)</label>
+          <input type="text" id="don-pan" class="form-input" placeholder="ABCDE1234F" />
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Proceed with Donation</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    // Set dynamic year
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Mobile Navigation Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const navMenu = document.getElementById('nav-menu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    // Close mobile menu on link click
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+      });
+    });
+
+    // Modal helpers
+    function openModal(modalId) {
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeModal(modalId) {
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Close modal on click outside content
+    window.addEventListener('click', (e) => {
+      if (e.target.classList.contains('modal-overlay')) {
+        e.target.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Form submission simulation
+    function handleFormSubmit(event, message) {
+      event.preventDefault();
+      alert(message);
+      document.querySelectorAll('.modal-overlay').forEach(modal => {
+        modal.classList.remove('active');
+      });
+      document.body.style.overflow = '';
+      event.target.reset();
+    }
+  </script>
+</body>
+</html>
