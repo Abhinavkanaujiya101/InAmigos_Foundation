@@ -22,6 +22,9 @@ InAmigos Foundation/
 │   ├── index.html        # Fully responsive NGO landing page
 │   ├── serve.js          # Node.js local preview server
 │   └── README.md         # Documentation for Task 1
+├── Task 2/
+│   ├── Link of Source.txt # Curated research URLs
+│   └── README.md         # AI in Education research documentation
 ├── .gitignore
 └── README.md             # Main repository documentation
 ```
@@ -33,6 +36,7 @@ InAmigos Foundation/
 | Task | Title | Description | Status |
 | :--- | :--- | :--- | :--- |
 | **[Task 1](./Task%201)** | **InAmigos Foundation NGO Website** | Comprehensive, mobile-responsive web portal with interactive donation & volunteer registration forms, impact statistics, causes, and credential verifications. | ✅ Completed |
+| **[Task 2](./Task%202)** | **AI in Education Research Sources** | Curated research sources, statistical insights, and documentation on AI in education, equity, and social impact. | ✅ Completed |
 
 ---
 
