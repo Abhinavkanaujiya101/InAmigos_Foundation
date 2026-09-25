@@ -1,0 +1,1642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InAmigos Foundation — Website Feature Highlight Concept Layout</title>
+  <meta name="description" content="A clean, single-page Figma-style concept mockup highlighting 5 essential NGO website features for InAmigos Foundation.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       DESIGN SYSTEM & PALETTE
+       Theme: InAmigos Green, Trust Slate, Warm Earth Accents
+       ========================================================================== */
+    :root {
+      --green-dark: #1b4332;
+      --green-primary: #2d6a4f;
+      --green-light: #40916c;
+      --green-subtle: #edf7f2;
+      --green-tint: #d8f3dc;
+
+      --earth-amber: #d97706;
+      --earth-brown: #92400e;
+      --earth-bg: #fffbeb;
+
+      --slate-900: #0f172a;
+      --slate-800: #1e293b;
+      --slate-700: #334155;
+      --slate-600: #475569;
+      --slate-500: #64748b;
+      --slate-300: #cbd5e1;
+      --slate-200: #e2e8f0;
+      --slate-100: #f1f5f9;
+
+      --canvas-bg: #eff2ef;
+      --board-bg: #ffffff;
+      --card-bg: #ffffff;
+      --card-border: #e2e8f0;
+
+      --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'Space Grotesk', ui-monospace, monospace;
+
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+      --radius-xl: 20px;
+
+      --shadow-board: 0 12px 36px rgba(15, 23, 42, 0.08);
+      --shadow-card: 0 2px 8px rgba(15, 23, 42, 0.04), 0 1px 2px rgba(15, 23, 42, 0.02);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background-color: var(--canvas-bg);
+      color: var(--slate-800);
+      line-height: 1.5;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Top Action Bar (Print / Presentation controls) */
+    .top-toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: #111827;
+      color: #ffffff;
+      padding: 10px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #1f2937;
+    }
+
+    .top-toolbar .brand-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .top-toolbar .foundation-wordmark {
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .top-toolbar .tagline-chip {
+      background-color: var(--green-primary);
+      color: #ffffff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 12px;
+      letter-spacing: 0.02em;
+    }
+
+    .top-toolbar .toolbar-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn-tool {
+      background-color: #1f2937;
+      border: 1px solid #374151;
+      color: #e5e7eb;
+      font-family: var(--font-main);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-tool:hover {
+      background-color: #374151;
+      color: #ffffff;
+    }
+
+    .btn-tool.primary {
+      background-color: var(--green-primary);
+      border-color: var(--green-light);
+      color: #ffffff;
+    }
+
+    .btn-tool.primary:hover {
+      background-color: var(--green-dark);
+    }
+
+    /* Canvas Outer Frame */
+    .canvas-wrapper {
+      padding: 36px 20px 60px;
+      display: flex;
+      justify-content: center;
+      background-image: radial-gradient(circle, #cbd5e1 1.2px, transparent 1.2px);
+      background-size: 24px 24px;
+    }
+
+    .figma-artboard-frame {
+      width: 100%;
+      max-width: 1200px;
+      background-color: var(--board-bg);
+      border: 1px solid #cbd5e1;
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-board);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header with Real Logo */
+    .artboard-header {
+      padding: 28px 40px 22px;
+      background: linear-gradient(180deg, #ffffff 0%, #fbfdfc 100%);
+      border-bottom: 1px solid var(--slate-200);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .header-logo-group {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .foundation-logo-img {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+      border-radius: 8px;
+      display: block;
+    }
+
+    .header-org-text h1 {
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: var(--green-dark);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .header-org-text p {
+      font-size: 0.85rem;
+      color: var(--slate-600);
+      font-weight: 500;
+      margin-top: 2px;
+    }
+
+    .header-badges-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .header-badge {
+      font-size: 0.72rem;
+      font-family: var(--font-mono);
+      font-weight: 600;
+      color: var(--slate-600);
+      background-color: var(--slate-100);
+      border: 1px solid var(--slate-200);
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+
+    /* CONCEPT DEMO Banner */
+    .concept-demo-banner {
+      margin: 20px 40px 0;
+      background-color: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .concept-tag-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .concept-pill {
+      font-size: 0.7rem;
+      font-family: var(--font-mono);
+      font-weight: 800;
+      background-color: var(--green-primary);
+      color: #ffffff;
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.05em;
+    }
+
+    .concept-tagline-text {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #166534;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .concept-desc-text {
+      font-size: 0.85rem;
+      color: #15803d;
+      line-height: 1.5;
+    }
+
+    /* Sections Flow */
+    .sections-flow-container {
+      padding: 28px 40px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+    }
+
+    .section-block {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .section-number-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0 2px;
+    }
+
+    .section-num-badge {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      background-color: var(--green-primary);
+      color: #ffffff;
+      padding: 2px 7px;
+      border-radius: 4px;
+    }
+
+    .section-heading-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--slate-900);
+      letter-spacing: -0.01em;
+    }
+
+    /* Card Wrapper */
+    .card-frame {
+      background-color: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 28px 32px;
+      box-shadow: var(--shadow-card);
+    }
+
+    /* Why This Matters Box */
+    .why-this-matters-box {
+      background-color: #fafbfc;
+      border: 1px solid var(--slate-200);
+      border-left: 3.5px solid var(--green-primary);
+      border-radius: var(--radius-sm);
+      padding: 10px 16px;
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .why-label {
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: var(--green-dark);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .why-content {
+      font-size: 0.82rem;
+      color: var(--slate-600);
+      line-height: 1.45;
+    }
+
+    /* ==========================================================================
+       01. DONATION SECTION UI
+       ========================================================================== */
+    .donation-grid-layout {
+      display: grid;
+      grid-template-columns: 1.25fr 0.95fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .kicker-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--green-primary);
+      background-color: var(--green-subtle);
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-bottom: 8px;
+    }
+
+    .card-inner-headline {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--slate-900);
+      letter-spacing: -0.01em;
+      margin-bottom: 10px;
+    }
+
+    .donation-intro-text {
+      font-size: 0.92rem;
+      color: var(--slate-600);
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+
+    .tax-incentive-banner {
+      background-color: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: var(--radius-sm);
+      padding: 11px 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .tax-shield-icon {
+      color: var(--green-primary);
+      flex-shrink: 0;
+    }
+
+    .tax-banner-title {
+      font-size: 0.84rem;
+      color: #166534;
+      font-weight: 700;
+    }
+
+    .tax-banner-sub {
+      font-size: 0.74rem;
+      color: #15803d;
+      margin-top: 1px;
+    }
+
+    .donation-action-terminal {
+      background-color: #fcfdfe;
+      border: 1.5px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .amount-prompt-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--slate-500);
+      letter-spacing: 0.04em;
+    }
+
+    .suggested-amounts-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .amount-btn-tile {
+      background-color: #ffffff;
+      border: 1.5px solid var(--slate-200);
+      border-radius: var(--radius-sm);
+      padding: 12px 10px;
+      font-family: var(--font-mono);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--slate-800);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      transition: all 0.2s ease;
+    }
+
+    .amount-btn-tile:hover {
+      border-color: var(--green-light);
+      background-color: #f6fcf8;
+    }
+
+    .amount-btn-tile.selected {
+      border-color: var(--green-primary);
+      background-color: var(--green-subtle);
+      color: var(--green-dark);
+      box-shadow: 0 0 0 2px rgba(45, 106, 79, 0.15);
+    }
+
+    .currency-symbol {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--slate-500);
+    }
+
+    .amount-btn-tile.selected .currency-symbol {
+      color: var(--green-primary);
+    }
+
+    .custom-input-box {
+      display: flex;
+      align-items: center;
+      background-color: #ffffff;
+      border: 1.5px solid var(--slate-200);
+      border-radius: var(--radius-sm);
+      padding: 8px 12px;
+      transition: border-color 0.2s ease;
+    }
+
+    .custom-input-box:focus-within {
+      border-color: var(--green-primary);
+    }
+
+    .custom-input-box input {
+      flex: 1;
+      border: none;
+      outline: none;
+      font-family: var(--font-mono);
+      font-size: 1.02rem;
+      font-weight: 600;
+      color: var(--slate-900);
+    }
+
+    .btn-donate-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 13px 20px;
+      background-color: var(--green-primary);
+      border: none;
+      border-radius: var(--radius-sm);
+      color: #ffffff;
+      font-family: var(--font-main);
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 6px rgba(45, 106, 79, 0.25);
+    }
+
+    .btn-donate-cta:hover {
+      background-color: var(--green-dark);
+      transform: translateY(-1px);
+    }
+
+    .security-badge-line {
+      font-size: 0.73rem;
+      color: var(--slate-500);
+      text-align: center;
+      font-weight: 500;
+    }
+
+    /* ==========================================================================
+       02. VOLUNTEER / INTERNSHIP SIGN-UP FORM
+       ========================================================================== */
+    .amigo-form-container {
+      max-width: 860px;
+    }
+
+    .amigo-form-intro {
+      font-size: 0.88rem;
+      color: var(--slate-600);
+      margin-bottom: 20px;
+    }
+
+    .amigo-signup-form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .form-two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .field-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .field-wrap label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--slate-700);
+    }
+
+    .field-wrap input,
+    .field-wrap select {
+      font-family: var(--font-main);
+      font-size: 0.88rem;
+      padding: 9px 12px;
+      border: 1.5px solid var(--slate-200);
+      border-radius: var(--radius-sm);
+      background-color: #ffffff;
+      color: var(--slate-900);
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .field-wrap input:focus,
+    .field-wrap select:focus {
+      border-color: var(--green-primary);
+    }
+
+    .form-cta-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 6px;
+      flex-wrap: wrap;
+    }
+
+    .btn-submit-amigo {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 22px;
+      background-color: var(--slate-800);
+      border: none;
+      border-radius: var(--radius-sm);
+      color: #ffffff;
+      font-family: var(--font-main);
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-submit-amigo:hover {
+      background-color: var(--slate-900);
+    }
+
+    .certificate-note-inline {
+      font-size: 0.75rem;
+      color: var(--slate-500);
+    }
+
+    /* ==========================================================================
+       03. IMPACT SHOWCASE (STAT TILES)
+       ========================================================================== */
+    .impact-stat-tiles-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .stat-tile-card {
+      background-color: #fafbfc;
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 20px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .stat-tile-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--green-light);
+    }
+
+    .tile-icon-circle {
+      width: 42px;
+      height: 42px;
+      background-color: var(--green-subtle);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--green-primary);
+    }
+
+    .stat-primary-metric {
+      font-family: var(--font-mono);
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--green-dark);
+      line-height: 1.2;
+    }
+
+    .stat-metric-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--slate-900);
+    }
+
+    .stat-one-line-desc {
+      font-size: 0.74rem;
+      color: var(--slate-600);
+      line-height: 1.4;
+    }
+
+    /* ==========================================================================
+       04. FLAGSHIP CAMPAIGNS & PROJECTS (6 CARDS)
+       ========================================================================== */
+    .flagship-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .flagship-project-box {
+      background-color: #ffffff;
+      border: 1.5px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .flagship-project-box:hover {
+      border-color: var(--green-primary);
+      transform: translateY(-2px);
+    }
+
+    .category-tag-pill {
+      font-size: 0.68rem;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--green-primary);
+      background-color: var(--green-subtle);
+      padding: 3px 8px;
+      border-radius: 4px;
+      align-self: flex-start;
+      margin-bottom: 10px;
+    }
+
+    .project-name-heading {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--slate-900);
+      margin-bottom: 6px;
+    }
+
+    .project-tagline-desc {
+      font-size: 0.83rem;
+      color: var(--slate-600);
+      line-height: 1.5;
+      margin-bottom: 16px;
+      flex: 1;
+    }
+
+    .project-box-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--slate-100);
+      padding-top: 12px;
+    }
+
+    .learn-more-cta {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--green-primary);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+    }
+
+    .learn-more-cta:hover {
+      color: var(--green-dark);
+      text-decoration: underline;
+    }
+
+    .status-active-badge {
+      font-size: 0.68rem;
+      color: #15803d;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      background-color: #16a34a;
+      border-radius: 50%;
+    }
+
+    /* ==========================================================================
+       05. TESTIMONIALS & BENEFICIARY VOICES
+       ========================================================================== */
+    .testimonials-three-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .testimonial-card-item {
+      background-color: #fbfcfb;
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .star-rating-row {
+      display: flex;
+      gap: 2px;
+      color: #f59e0b;
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+    }
+
+    .testimonial-quote-body {
+      font-size: 0.86rem;
+      color: var(--slate-700);
+      line-height: 1.6;
+      font-style: italic;
+      margin-bottom: 18px;
+      flex: 1;
+    }
+
+    .person-profile-block {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-top: 1px solid var(--slate-200);
+      padding-top: 12px;
+    }
+
+    .person-avatar-circle {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background-color: var(--green-primary);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 0.82rem;
+      flex-shrink: 0;
+    }
+
+    .avatar-vol { background-color: var(--green-primary); }
+    .avatar-parent { background-color: var(--earth-amber); }
+    .avatar-scholar { background-color: #0284c7; }
+
+    .person-name-text {
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--slate-900);
+    }
+
+    .person-role-text {
+      font-size: 0.72rem;
+      color: var(--slate-600);
+    }
+
+    .person-chapter-text {
+      font-size: 0.68rem;
+      color: var(--slate-500);
+    }
+
+    /* ==========================================================================
+       FOOTER & CONTACT SECTION
+       ========================================================================== */
+    .artboard-footer {
+      background-color: #111827;
+      color: #f9fafb;
+      padding: 36px 40px;
+      border-top: 1px solid var(--slate-300);
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .accreditations-strip {
+      background-color: #1f2937;
+      border: 1px solid #374151;
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .accreditations-title {
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #9ca3af;
+    }
+
+    .accreditations-badges {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .accred-tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      background-color: rgba(45, 106, 79, 0.4);
+      color: #74c69d;
+      border: 1px solid rgba(82, 183, 136, 0.3);
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+
+    .footer-info-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr;
+      gap: 32px;
+      align-items: flex-start;
+    }
+
+    .footer-col-head {
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .footer-address-p {
+      font-size: 0.82rem;
+      color: #9ca3af;
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+
+    .contact-details-list {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-size: 0.8rem;
+      color: #cbd5e1;
+      margin-top: 6px;
+    }
+
+    .contact-details-list a {
+      color: #34d399;
+      text-decoration: none;
+    }
+
+    .contact-details-list a:hover {
+      text-decoration: underline;
+    }
+
+    .social-links-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .social-item-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #d1d5db;
+      text-decoration: none;
+      font-size: 0.8rem;
+      transition: color 0.2s ease;
+    }
+
+    .social-item-link:hover {
+      color: #34d399;
+    }
+
+    .official-url-tag {
+      color: #34d399;
+      font-weight: 600;
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    .official-url-tag:hover {
+      text-decoration: underline;
+    }
+
+    .copyright-row {
+      border-top: 1px solid #1f2937;
+      padding-top: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 0.74rem;
+      color: #6b7280;
+    }
+
+    /* Notification Toast */
+    .toast-box {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background-color: #111827;
+      color: #ffffff;
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.25s ease;
+      z-index: 9999;
+    }
+
+    .toast-box.visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* Print Styles */
+    @media print {
+      .top-toolbar, .no-print {
+        display: none !important;
+      }
+      body, .canvas-wrapper {
+        background: #ffffff !important;
+        padding: 0 !important;
+      }
+      .figma-artboard-frame {
+        border: none !important;
+        box-shadow: none !important;
+        max-width: 100% !important;
+      }
+      .sections-flow-container {
+        padding: 16px !important;
+        gap: 20px !important;
+      }
+      .card-frame {
+        break-inside: avoid;
+        box-shadow: none !important;
+        border: 1px solid #cbd5e1 !important;
+      }
+    }
+
+    /* Responsive Breakpoints */
+    @media (max-width: 992px) {
+      .flagship-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .testimonials-three-grid {
+        grid-template-columns: 1fr;
+      }
+      .impact-stat-tiles-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .footer-info-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .artboard-header, .sections-flow-container, .artboard-footer {
+        padding: 20px 16px;
+      }
+      .concept-demo-banner {
+        margin: 16px 16px 0;
+      }
+      .donation-grid-layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .form-two-col {
+        grid-template-columns: 1fr;
+      }
+      .flagship-cards-grid {
+        grid-template-columns: 1fr;
+      }
+      .impact-stat-tiles-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Action Toolbar -->
+  <header class="top-toolbar no-print">
+    <div class="brand-info">
+      <span class="foundation-wordmark">InAmigos Foundation</span>
+      <span class="tagline-chip">Become an AMIGO</span>
+    </div>
+    <div class="toolbar-actions">
+      <button class="btn-tool" onclick="window.print()" title="Print or save as PDF">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        Export PDF
+      </button>
+      <button class="btn-tool primary" onclick="showToast('Presentation Ready', 'Use Win+Shift+S (or Cmd+Shift+4) to capture frames for your Figma presentation board.')">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Figma Board Spec
+      </button>
+    </div>
+  </header>
+
+  <!-- Canvas Outer Wrapper -->
+  <main class="canvas-wrapper">
+
+    <!-- Figma Presentation Frame -->
+    <div class="figma-artboard-frame" id="artboardFrame">
+
+      <!-- Board Header with Real Logo -->
+      <header class="artboard-header">
+        <div class="header-logo-group">
+          <img 
+            src="https://inamigos-foundation-aniket.vercel.app/assets/logo.webp" 
+            alt="InAmigos Foundation Logo" 
+            class="foundation-logo-img"
+            onerror="this.style.display='none'; document.getElementById('fallbackLogo').style.display='flex';"
+          />
+          <!-- Fallback if offline -->
+          <div id="fallbackLogo" style="display:none; width:52px; height:52px; background:#edf7f2; border:1.5px solid #2d6a4f; border-radius:8px; align-items:center; justify-content:center; color:#2d6a4f; font-weight:800;">
+            IAF
+          </div>
+          <div class="header-org-text">
+            <h1>InAmigos Foundation</h1>
+            <p>Section 8 Registered Non-Profit • Bilaspur, Chhattisgarh • Founded Sept 23, 2020 by Mr. Govind Shukla</p>
+          </div>
+        </div>
+
+        <div class="header-badges-row">
+          <span class="header-badge">28 States Reached</span>
+          <span class="header-badge">6 Flagship Projects</span>
+          <span class="header-badge">80G &amp; 12A Certified</span>
+        </div>
+      </header>
+
+      <!-- CONCEPT DEMO Banner with Exact User Text -->
+      <div class="concept-demo-banner">
+        <div class="concept-tag-row">
+          <span class="concept-pill">CONCEPT DEMO</span>
+          <span class="concept-tagline-text">Website Feature Architecture Spec</span>
+        </div>
+        <p class="concept-desc-text">
+          Website Feature Architecture: Visual mockup highlighting 5 essential NGO website functional modules designed for donor trust, community volunteer recruitment, transparent impact tracking, and grassroots outreach.
+        </p>
+      </div>
+
+      <!-- SECTIONS (01 - 05) -->
+      <div class="sections-flow-container">
+
+        <!-- ============================================================
+             01. DONATION SECTION
+             ============================================================ -->
+        <section class="section-block" id="section-01">
+          <div class="section-number-header">
+            <span class="section-num-badge">01</span>
+            <h2 class="section-heading-title">Donation Section</h2>
+          </div>
+
+          <!-- UI Card Mockup -->
+          <div class="card-frame">
+            <div class="donation-grid-layout">
+              <div>
+                <span class="kicker-tag">Immediate Grassroots Support</span>
+                <h3 class="card-inner-headline">Power Change Across 28 States</h3>
+                <p class="donation-intro-text">
+                  Your contribution directly funds child education supplies, hunger relief meals, stray animal care, women's vocational kits, and urban greening drives.
+                </p>
+
+                <div class="tax-incentive-banner">
+                  <div class="tax-shield-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                  </div>
+                  <div>
+                    <div class="tax-banner-title">80G &amp; 12A Tax-Benefit Messaging</div>
+                    <div class="tax-banner-sub">Contributions are eligible for 50% tax deduction under Section 80G of the Indian Income Tax Act. Instant 80G certificate emailed upon donation.</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Action Terminal -->
+              <div class="donation-action-terminal">
+                <span class="amount-prompt-label">Select Suggested Amount (INR)</span>
+
+                <div class="suggested-amounts-grid">
+                  <button type="button" class="amount-btn-tile" data-amt="500">
+                    <span class="currency-symbol">₹</span>500
+                  </button>
+                  <button type="button" class="amount-btn-tile selected" data-amt="1000">
+                    <span class="currency-symbol">₹</span>1,000
+                  </button>
+                  <button type="button" class="amount-btn-tile" data-amt="2500">
+                    <span class="currency-symbol">₹</span>2,500
+                  </button>
+                  <button type="button" class="amount-btn-tile" data-amt="5000">
+                    <span class="currency-symbol">₹</span>5,000
+                  </button>
+                </div>
+
+                <div class="custom-input-box">
+                  <span class="currency-symbol" style="margin-right: 8px;">₹</span>
+                  <input type="number" id="inputCustomDonation" value="1000" min="100" step="100" placeholder="Other custom amount">
+                  <span style="font-size: 0.72rem; color: #64748b; font-weight: 700;">INR</span>
+                </div>
+
+                <button type="button" class="btn-donate-cta" onclick="handleDonationAction()">
+                  <span>Donate ₹<span id="labelDonationAmt">1,000</span> Now</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </button>
+
+                <p class="security-badge-line">
+                  🔒 100% Encrypted &amp; Secure • UPI, Cards, Net Banking
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Exact Why this matters note -->
+          <div class="why-this-matters-box">
+            <span class="why-label">Why this matters:</span>
+            <span class="why-content">Clear suggested amount tiles remove decision paralysis, while prominent 80G/12A tax exemption messaging provides financial credibility and tangible incentives for Indian donors.</span>
+          </div>
+        </section>
+
+
+        <!-- ============================================================
+             02. VOLUNTEER / INTERNSHIP SIGN-UP FORM
+             ============================================================ -->
+        <section class="section-block" id="section-02">
+          <div class="section-number-header">
+            <span class="section-num-badge">02</span>
+            <h2 class="section-heading-title">Volunteer/Internship Sign-up Form</h2>
+          </div>
+
+          <!-- UI Card Mockup -->
+          <div class="card-frame">
+            <div class="amigo-form-container">
+              <span class="kicker-tag" style="background-color: #fffbeb; color: #92400e;">Youth Empowerment</span>
+              <h3 class="card-inner-headline">Become an Amigo</h3>
+              <p class="amigo-form-intro">Join our dedicated network of 200+ changemakers driving on-ground initiatives in education, food relief, and environmental action.</p>
+
+              <form class="amigo-signup-form" onsubmit="event.preventDefault(); handleAmigoFormSubmit();">
+                <div class="form-two-col">
+                  <div class="field-wrap">
+                    <label for="fullName">Full Name *</label>
+                    <input type="text" id="fullName" placeholder="e.g., Ananya Verma" required>
+                  </div>
+                  <div class="field-wrap">
+                    <label for="emailAddr">Email *</label>
+                    <input type="email" id="emailAddr" placeholder="ananya@example.com" required>
+                  </div>
+                </div>
+
+                <div class="form-two-col">
+                  <div class="field-wrap">
+                    <label for="cityLoc">City/Location *</label>
+                    <input type="text" id="cityLoc" placeholder="e.g., Bilaspur, Raipur, Delhi..." required>
+                  </div>
+                  <div class="field-wrap">
+                    <label for="interestArea">Area of Interest *</label>
+                    <select id="interestArea" required>
+                      <option value="" disabled selected>Select from 6 Flagship Projects</option>
+                      <option value="seva">Project Seva (Humanitarian &amp; Food Relief)</option>
+                      <option value="bachpanshala">Project Bachpanshala (Child Education)</option>
+                      <option value="jeev">Project Jeev (Animal Welfare &amp; Rescue)</option>
+                      <option value="udaan">Project Udaan (Women Empowerment)</option>
+                      <option value="prakriti">Project Prakriti (Environment &amp; Afforestation)</option>
+                      <option value="vikas">Project Vikas (Skill Development)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-cta-row">
+                  <button type="submit" class="btn-submit-amigo">
+                    <span>Submit Amigo Application</span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                  </button>
+                  <span class="certificate-note-inline">📜 Official volunteer/internship certificate issued upon project completion.</span>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- Exact Why this matters note -->
+          <div class="why-this-matters-box">
+            <span class="why-label">Why this matters:</span>
+            <span class="why-content">Low-barrier entry with focused fields (name, email, city, and interest area) allows InAmigos Foundation to rapidly mobilize regional youth and build local ground chapters across all 28 states.</span>
+          </div>
+        </section>
+
+
+        <!-- ============================================================
+             03. IMPACT SHOWCASE
+             ============================================================ -->
+        <section class="section-block" id="section-03">
+          <div class="section-number-header">
+            <span class="section-num-badge">03</span>
+            <h2 class="section-heading-title">Impact Showcase</h2>
+          </div>
+
+          <!-- UI Card Mockup -->
+          <div class="card-frame">
+            <div class="impact-stat-tiles-row">
+              <!-- Tile 1 -->
+              <div class="stat-tile-card">
+                <div class="tile-icon-circle">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <div>
+                  <div class="stat-primary-metric">50,000+</div>
+                  <div class="stat-metric-title">Beneficiaries Reached</div>
+                  <p class="stat-one-line-desc">Served hot meals, education kits, clothing, and health support across underprivileged clusters.</p>
+                </div>
+              </div>
+
+              <!-- Tile 2 -->
+              <div class="stat-tile-card">
+                <div class="tile-icon-circle">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                </div>
+                <div>
+                  <div class="stat-primary-metric">200+</div>
+                  <div class="stat-metric-title">Active Volunteers</div>
+                  <p class="stat-one-line-desc">Passionate youth and professionals serving as dedicated Amigos in field chapters.</p>
+                </div>
+              </div>
+
+              <!-- Tile 3 -->
+              <div class="stat-tile-card">
+                <div class="tile-icon-circle">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                </div>
+                <div>
+                  <div class="stat-primary-metric">28</div>
+                  <div class="stat-metric-title">States Covered</div>
+                  <p class="stat-one-line-desc">Expanding nationwide grassroots footprint and regional community outreach chapters.</p>
+                </div>
+              </div>
+
+              <!-- Tile 4 -->
+              <div class="stat-tile-card">
+                <div class="tile-icon-circle">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                </div>
+                <div>
+                  <div class="stat-primary-metric">6</div>
+                  <div class="stat-metric-title">Flagship Causes</div>
+                  <p class="stat-one-line-desc">Integrated programs addressing hunger, schooling, animal rescue, women, climate, and skills.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Exact Why this matters note -->
+          <div class="why-this-matters-box">
+            <span class="why-label">Why this matters:</span>
+            <span class="why-content">Prominently displayed quantitative milestones establish immediate institutional credibility, validating the foundation's nationwide footprint for prospective donors and CSR grant evaluators.</span>
+          </div>
+        </section>
+
+
+        <!-- ============================================================
+             04. FLAGSHIP CAMPAIGNS & PROJECTS
+             ============================================================ -->
+        <section class="section-block" id="section-04">
+          <div class="section-number-header">
+            <span class="section-num-badge">04</span>
+            <h2 class="section-heading-title">Flagship Campaigns &amp; Projects</h2>
+          </div>
+
+          <!-- UI Card Mockup (6 Cards with Real Taglines) -->
+          <div class="card-frame">
+            <div class="flagship-cards-grid">
+              
+              <!-- 1. Project Seva -->
+              <div class="flagship-project-box">
+                <span class="category-tag-pill">Humanitarian</span>
+                <h3 class="project-name-heading">Project Seva</h3>
+                <p class="project-tagline-desc">Serving humanity with compassion through food and clothing drives for the underprivileged.</p>
+                <div class="project-box-footer">
+                  <a class="learn-more-cta" onclick="showToast('Project Seva', 'Humanitarian food & clothing drives across underserved communities.')">Learn more →</a>
+                  <span class="status-active-badge"><span class="status-dot"></span> Active</span>
+                </div>
+              </div>
+
+              <!-- 2. Project Bachpanshala -->
+              <div class="flagship-project-box">
+                <span class="category-tag-pill">Education</span>
+                <h3 class="project-name-heading">Project Bachpanshala</h3>
+                <p class="project-tagline-desc">Nurturing young minds and building bright futures through quality education for underprivileged children.</p>
+                <div class="project-box-footer">
+                  <a class="learn-more-cta" onclick="showToast('Project Bachpanshala', 'Foundational schooling, books, and evening remedial tutoring.')">Learn more →</a>
+                  <span class="status-active-badge"><span class="status-dot"></span> Active</span>
+                </div>
+              </div>
+
+              <!-- 3. Project Jeev -->
+              <div class="flagship-project-box">
+                <span class="category-tag-pill">Animal Welfare</span>
+                <h3 class="project-name-heading">Project Jeev</h3>
+                <p class="project-tagline-desc">Animal rescue, protection and feeding for strays and injured animals.</p>
+                <div class="project-box-footer">
+                  <a class="learn-more-cta" onclick="showToast('Project Jeev', 'First-aid rescue runs, rabies vaccination, and daily feeding.')">Learn more →</a>
+                  <span class="status-active-badge"><span class="status-dot"></span> Active</span>
+                </div>
+              </div>
+
+              <!-- 4. Project Udaan -->
+              <div class="flagship-project-box">
+                <span class="category-tag-pill">Women Empowerment</span>
+                <h3 class="project-name-heading">Project Udaan</h3>
+                <p class="project-tagline-desc">Soaring towards a brighter future through skill development and financial independence.</p>
+                <div class="project-box-footer">
+                  <a class="learn-more-cta" onclick="showToast('Project Udaan', 'Tailoring training, menstrual hygiene kits, and livelihood hubs.')">Learn more →</a>
+                  <span class="status-active-badge"><span class="status-dot"></span> Active</span>
+                </div>
+              </div>
+
+              <!-- 5. Project Prakriti -->
+              <div class="flagship-project-box">
+                <span class="category-tag-pill">Environment</span>
+                <h3 class="project-name-heading">Project Prakriti</h3>
+                <p class="project-tagline-desc">Plant for a better tomorrow — conservation, plantation drives and sustainability.</p>
+                <div class="project-box-footer">
+                  <a class="learn-more-cta" onclick="showToast('Project Prakriti', 'Mass native sapling plantation and environmental drives.')">Learn more →</a>
+                  <span class="status-active-badge"><span class="status-dot"></span> Active</span>
+                </div>
+              </div>
+
+              <!-- 6. Project Vikas -->
+              <div class="flagship-project-box">
+                <span class="category-tag-pill">Skill Development</span>
+                <h3 class="project-name-heading">Project Vikas</h3>
+                <p class="project-tagline-desc">Enhancing employability through targeted skill development programs.</p>
+                <div class="project-box-footer">
+                  <a class="learn-more-cta" onclick="showToast('Project Vikas', 'Career mentoring, digital literacy, and job-readiness workshops.')">Learn more →</a>
+                  <span class="status-active-badge"><span class="status-dot"></span> Active</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Exact Why this matters note -->
+          <div class="why-this-matters-box">
+            <span class="why-label">Why this matters:</span>
+            <span class="why-content">Organizing initiatives under recognizable flagship project names (Seva, Bachpanshala, Jeev, Udaan, Prakriti, Vikas) gives donors clarity on exact outcomes and lets volunteers align with their specific passion area.</span>
+          </div>
+        </section>
+
+
+        <!-- ============================================================
+             05. TESTIMONIALS & BENEFICIARY VOICES
+             ============================================================ -->
+        <section class="section-block" id="section-05">
+          <div class="section-number-header">
+            <span class="section-num-badge">05</span>
+            <h2 class="section-heading-title">Testimonials &amp; Beneficiary Voices</h2>
+          </div>
+
+          <!-- UI Card Mockup (3 Quote Cards with Star Ratings) -->
+          <div class="card-frame">
+            <div class="testimonials-three-grid">
+              
+              <!-- Quote 1: Volunteer -->
+              <div class="testimonial-card-item">
+                <div class="star-rating-row">★★★★★</div>
+                <p class="testimonial-quote-body">
+                  “Volunteering with InAmigos Foundation across weekend food drives and tree plantation events gave me direct ground purpose. The grassroots mobilization of fellow Amigos is inspiring.”
+                </p>
+                <div class="person-profile-block">
+                  <div class="person-avatar-circle avatar-vol">R</div>
+                  <div>
+                    <h4 class="person-name-text">Rohit Sharma</h4>
+                    <p class="person-role-text">Active Volunteer Amigo</p>
+                    <span class="person-chapter-text">Project Seva &amp; Prakriti • Raipur Chapter</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quote 2: Beneficiary Parent -->
+              <div class="testimonial-card-item">
+                <div class="star-rating-row">★★★★★</div>
+                <p class="testimonial-quote-body">
+                  “My children received textbooks, a school bag, and regular evening tutoring through Bachpanshala. Their learning curiosity and confidence in school have grown tremendously.”
+                </p>
+                <div class="person-profile-block">
+                  <div class="person-avatar-circle avatar-parent">M</div>
+                  <div>
+                    <h4 class="person-name-text">Meena Sahu</h4>
+                    <p class="person-role-text">Beneficiary's Parent</p>
+                    <span class="person-chapter-text">Project Bachpanshala • Bilaspur</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quote 3: Self-Help Scholar / Beneficiary -->
+              <div class="testimonial-card-item">
+                <div class="star-rating-row">★★★★★</div>
+                <p class="testimonial-quote-body">
+                  “The tailoring and craft workshops under Project Udaan gave me practical vocational skills. Today, I am financially self-reliant and able to fund my younger sister's higher education.”
+                </p>
+                <div class="person-profile-block">
+                  <div class="person-avatar-circle avatar-scholar">P</div>
+                  <div>
+                    <h4 class="person-name-text">Pooja Kashyap</h4>
+                    <p class="person-role-text">Self-Help Artisan Beneficiary</p>
+                    <span class="person-chapter-text">Project Udaan Livelihood Center • Chhattisgarh</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Exact Why this matters note -->
+          <div class="why-this-matters-box">
+            <span class="why-label">Why this matters:</span>
+            <span class="why-content">Authentic multi-perspective quotes (from volunteers, parents, and direct beneficiaries) humanize the mission, bridging the gap between statistical impact and real-world human transformation.</span>
+          </div>
+        </section>
+
+      </div><!-- End sections-flow-container -->
+
+
+      <!-- ============================================================
+           FOOTER / CONTACT SECTION (REAL DETAILS)
+           ============================================================ -->
+      <footer class="artboard-footer" id="footer-section">
+        
+        <!-- Accreditations Strip -->
+        <div class="accreditations-strip">
+          <span class="accreditations-title">Statutory Certifications &amp; Accreditations</span>
+          <div class="accreditations-badges">
+            <span class="accred-tag">Section 8 Registered</span>
+            <span class="accred-tag">80G &amp; 12A Certified</span>
+            <span class="accred-tag">CSR-1 Registered</span>
+            <span class="accred-tag">ISO 9001:2015</span>
+            <span class="accred-tag">NGO Darpan – NITI Aayog</span>
+          </div>
+        </div>
+
+        <!-- 3-Column Info Grid -->
+        <div class="footer-info-grid">
+          <!-- Column 1: Address & Org Meta -->
+          <div>
+            <h4 class="footer-col-head">InAmigos Foundation</h4>
+            <p class="footer-address-p">
+              📍 <strong>Registered Address:</strong><br>
+              Ward No. 5, Gram Post, Sipat Ujwal Nagar,<br>
+              Bilaspur, Chhattisgarh 495555
+            </p>
+            <div class="contact-details-list">
+              <div>✉️ <strong>Email:</strong> <a href="mailto:inamigosfoundation@gmail.com">inamigosfoundation@gmail.com</a>, <a href="mailto:support@inamigosfoundation.org.in">support@inamigosfoundation.org.in</a></div>
+              <div>📞 <strong>Phone:</strong> <a href="tel:+916267309902">+91 626 730 9902</a></div>
+              <div style="margin-top: 4px; color: #9ca3af; font-size: 0.74rem;">Founded 23 Sept 2020 by Govind Shukla.</div>
+            </div>
+          </div>
+
+          <!-- Column 2: Connect With Us -->
+          <div>
+            <h4 class="footer-col-head">Connect With Us</h4>
+            <div class="social-links-grid">
+              <a href="https://facebook.com/inamigos.inamigos" target="_blank" class="social-item-link">
+                <span>📘 Facebook:</span> <strong>facebook.com/inamigos.inamigos</strong>
+              </a>
+              <a href="https://instagram.com/inamigos" target="_blank" class="social-item-link">
+                <span>📸 Instagram:</span> <strong>@inamigos</strong>
+              </a>
+              <a href="https://twitter.com/InamigosF" target="_blank" class="social-item-link">
+                <span>🐦 X/Twitter:</span> <strong>@InamigosF</strong>
+              </a>
+              <a href="https://linkedin.com/company/inamigos-foundation" target="_blank" class="social-item-link">
+                <span>💼 LinkedIn:</span> <strong>InAmigos Foundation</strong>
+              </a>
+              <a href="https://youtube.com/@inamigosfoundation" target="_blank" class="social-item-link">
+                <span>▶️ YouTube:</span> <strong>@inamigosfoundation</strong>
+              </a>
+            </div>
+          </div>
+
+          <!-- Column 3: Official Verification -->
+          <div>
+            <h4 class="footer-col-head">Official Website</h4>
+            <p class="footer-address-p">
+              For live program updates, financial reports, and CSR partnership queries:
+            </p>
+            <p style="margin-top: 6px;">
+              🌐 <a href="https://inamigosfoundation.org.in" target="_blank" class="official-url-tag">inamigosfoundation.org.in</a>
+            </p>
+            <p style="font-size: 0.72rem; color: #6b7280; margin-top: 14px;">
+              Tax benefits: Donations are eligible for 50% deduction under Section 80G of the Indian Income Tax Act.
+            </p>
+          </div>
+        </div>
+
+        <!-- Copyright Line -->
+        <div class="copyright-row">
+          <span>© 2026 InAmigos Foundation. A registered Section 8 Non-Profit Organization in India.</span>
+          <span>Figma-Style Single Page Feature Spec</span>
+        </div>
+      </footer>
+
+    </div><!-- End figma-artboard-frame -->
+
+  </main>
+
+  <!-- Notification Toast -->
+  <div id="toastBox" class="toast-box" aria-live="polite">
+    <span id="toastMsgContent">Notification</span>
+  </div>
+
+  <script>
+    // Donation Tile Selector
+    const amtTiles = document.querySelectorAll('.amount-btn-tile');
+    const customAmtInput = document.getElementById('inputCustomDonation');
+    const labelAmt = document.getElementById('labelDonationAmt');
+
+    amtTiles.forEach(tile => {
+      tile.addEventListener('click', () => {
+        amtTiles.forEach(t => t.classList.remove('selected'));
+        tile.classList.add('selected');
+        const val = tile.getAttribute('data-amt');
+        if (customAmtInput) customAmtInput.value = val;
+        if (labelAmt) labelAmt.textContent = Number(val).toLocaleString('en-IN');
+      });
+    });
+
+    if (customAmtInput) {
+      customAmtInput.addEventListener('input', (e) => {
+        const val = parseInt(e.target.value, 10);
+        amtTiles.forEach(t => t.classList.remove('selected'));
+
+        if (!isNaN(val) && val > 0) {
+          if (labelAmt) labelAmt.textContent = val.toLocaleString('en-IN');
+          const matching = document.querySelector(`.amount-btn-tile[data-amt="${val}"]`);
+          if (matching) matching.classList.add('selected');
+        } else {
+          if (labelAmt) labelAmt.textContent = '0';
+        }
+      });
+    }
+
+    function handleDonationAction() {
+      const val = customAmtInput ? customAmtInput.value : '1000';
+      showToast('Donation Flow', `Initiating contribution of ₹${Number(val).toLocaleString('en-IN')} with 80G & 12A tax exemption.`);
+    }
+
+    function handleAmigoFormSubmit() {
+      const name = document.getElementById('fullName')?.value;
+      const city = document.getElementById('cityLoc')?.value;
+      showToast('Welcome Amigo!', `Thank you, ${name || 'Amigo'}! Your application for ${city || 'your chapter'} has been received.`);
+    }
+
+    let toastTimeout;
+    function showToast(title, message) {
+      const toast = document.getElementById('toastBox');
+      const content = document.getElementById('toastMsgContent');
+      if (!toast || !content) return;
+
+      content.innerHTML = `<strong>${title}:</strong> ${message}`;
+      toast.classList.add('visible');
+
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.remove('visible');
+      }, 4000);
+    }
+  </script>
+</body>
+</html>
